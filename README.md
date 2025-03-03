@@ -3,5 +3,5 @@ Powershell module for the baramundi OpenAPI Interface - https://www.baramundi.co
 
 Require Powershell 7.x
 
-# Modulinstallation
+## Modulinstallation
 Datei speichern und mit "Import-Module "[Speicherort\bconnectV2.psm1] installieren
