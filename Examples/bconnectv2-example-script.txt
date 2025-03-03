@@ -1,0 +1,35 @@
+# Example 1: Initialize the connection to the bconnectV2 API
+# Connect to the bconnectV2 API
+$credential = Get-Credential -Message "Enter credentials for bconnectV2"
+Initialize-bconnectV2 -Server "bms.example.com" -Credential $credential -Port 443
+
+# Example 2: Get all endpoints
+$allEndpoints = Get-bconnectV2Endpoints
+$allEndpoints | Format-Table -Property id, displayName, type
+
+# Example 3: Get a specific endpoint by ID
+$endpointId = "12345678-1234-1234-1234-123456789012"
+$endpoint = Get-bconnectV2Endpoint -Id $endpointId
+$endpoint
+
+# Example 4: Get Windows endpoints with filtering
+$windowsEndpoints = Get-bconnectV2WindowsEndpoints -Domain "contoso.com" -PageSize 50
+$windowsEndpoints | Format-Table -Property id, displayName, hostName, domain
+
+# Example 5: Create a new Windows endpoint
+$newEndpoint = New-bconnectV2WindowsEndpoint -DisplayName "Server01" -HostName "Server01" -Domain "contoso.com" -LogicalGroupId "87654321-4321-4321-4321-210987654321" -NetworkMode "Dynamic"
+$newEndpoint
+
+# Example 6: Update a Windows endpoint
+$updatedEndpoint = Edit-bconnectV2WindowsEndpoint -Id $newEndpoint.id -Comment "This is a test server" -IsEnergyManagementActive $true
+$updatedEndpoint
+
+# Example 7: Start enrollment for a Windows endpoint
+$enrollmentInfo = Start-bconnectV2WindowsEndpointEnrollment -Id $newEndpoint.id -EnrollmentMailAddress "admin@contoso.com"
+$enrollmentInfo
+
+# Example 8: Remove a Windows endpoint
+Remove-bconnectV2WindowsEndpoint -Id $newEndpoint.id -Confirm:$false
+
+# Example 9: Reset the bconnectV2 connection
+Reset-bconnectV2
