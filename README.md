@@ -1,5 +1,6 @@
 # PS-bconnectOpenAPI
-Powershell module for the baramundi OpenAPI Interface - https://www.baramundi.com/
+> [!IMPORTANT]  
+> This module is NOT a product of baramundi software GmbH
 
 Require Powershell 7.x
 
