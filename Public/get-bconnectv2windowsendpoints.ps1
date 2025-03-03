@@ -25,7 +25,7 @@ function Get-bconnectV2WindowsEndpoints {
         The zero-indexed number of the first page to return
         
     .PARAMETER PageSize
-        The number of items to list on a single page (default: 20, max: 1000)
+        The number of items to list on a single page (default: 1000, max: 1000)
         
     .EXAMPLE
         Get-bconnectV2WindowsEndpoints
@@ -58,7 +58,7 @@ function Get-bconnectV2WindowsEndpoints {
         
         [Parameter(Mandatory = $false)]
         [ValidateRange(1, 1000)]
-        [int]$PageSize = 20
+        [int]$PageSize = 1000
     )
     
     # Build query parameters
