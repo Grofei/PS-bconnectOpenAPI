@@ -1,6 +1,6 @@
 # PS-bconnectOpenAPI
 > [!IMPORTANT]  
-> This module is NOT a product of baramundi software GmbH
+> This module is NOT a product of baramundi software GmbH (https://www.baramundi.com)
 
 Require Powershell 7.x
 
